@@ -197,9 +197,7 @@ function marcar_seccion(contexto, num_diente, seccion, color_pas){
         
     }
     
-    //alert(num_diente);
     inicio_x = (num_diente*med) + (separacion_x*num_diente) + separacion_x;
-    //alert('Param 1: '+(num_diente*med)+' Param 2: '+(separacion_x*num_diente)+' Param 3: '+separacion_x+' Med: '+med+' Num Diente: '+num_diente)
     
     /* 1ra zona */
     if (seccion==1){
@@ -372,8 +370,6 @@ function marcar_puente(contexto, dient_1, dient_2, color_pas){
     ctx.lineWidth = 4;
     ctx.moveTo(inicio_x,inicio_y);
     ctx.lineTo(fin_x,inicio_y);
-    //ctx.moveTo(inicio_x+40,inicio_y);
-    //ctx.lineTo(inicio_x,inicio_y+40);
     ctx.stroke();
     ctx.lineWidth = 1;
 }
@@ -448,7 +444,7 @@ for (x=0; x<16; x++){
         context.fillText(x+17, iniciar_x+(medida/2), (iniciar_y-10)+5);
     }
 }
-// 17 - 32 dientes
+// 33 - 48 dientes
 iniciar_x = 0;
 iniciar_y = medida + 220;
 for (x=0; x<16; x++){
@@ -462,7 +458,7 @@ for (x=0; x<16; x++){
         context.fillText(x+33, iniciar_x+(medida/2), (iniciar_y-10)+5);
     }
 }
-// 17 - 32 dientes
+// 49 - 64 dientes
 iniciar_x = 0;
 iniciar_y = medida + 340;
 for (x=0; x<16; x++){
@@ -605,16 +601,12 @@ function getPosition(event){
             if (diente>16 && diente < 33){
                 y = y-120;
             }
-            /**
-             * En tería debería de marcar la altura de la siguiente fila nueva
-             **/ 
             if (diente>33 && diente <49){
                 y = y-240;
             }
             if (diente>49 && diente <65){
                 y = y-360;
             }
-            //alert(y);
             /**
              * Las "Secciones" sin las 5 opciones clickeables existentes por diente
              * van en el sentido de las agujas del reloj
