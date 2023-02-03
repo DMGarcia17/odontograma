@@ -1,5 +1,9 @@
 var accion = '';
 $(function() {
+    let fecha = new Date();
+    $('#fechaOd').text(fecha.getDate() + "/" + (fecha.getMonth()+1) + "/" + fecha.getFullYear());
+    
+    $('.info-pt').fadeOut(0);
     $('#radio').change(function () {
         accion = $("input[name='accion']:checked").val();
         if(accion=='borrar'){
@@ -12,7 +16,9 @@ $(function() {
 
 function imprimir(){
     $('.act-rad').fadeOut(0);
+    $('.info-pt').fadeIn(0);
     window.print();
+
 }
 
 // Funcion para dibujar las lineas de cada diente
